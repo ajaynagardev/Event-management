@@ -1,38 +1,248 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.layout-header nav{
+  display: flex;
+  gap: 10;
+  justify-content: space-around;
+  font-size: 1.3rem;
+  padding: 1.5rem;
+}
+.layout-header nav ul{
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+}
+li{
+  list-style: none;
+  text-decoration: none;
+}
+.a{
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+/* help section  */
+.help-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+.help-heading{
+  font-size: 2rem;
+  font-weight: 500;
+}
+.help-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+  width: 69%;
+  min-height: 50vh;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+.help-card-container{
+  /* width: 300px; */
+  height: 400px;
+  width: 900px; 
+}
+.react-calendar {
+  width: 881px !important;
+  height: 400px;
+  border: none !important;
+  box-shadow: 0px 0px 10px black;
+  border-radius: 10px;
+}
+.react-calendar__navigation {
+  height: 70px !important;
+}
+.react-calendar, .react-calendar *, .react-calendar *:before, .react-calendar *:after {
+  font-size: 18px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+/* popup--section  */
+
+.popup{
+  /* display:none; */
+  position: absolute;
+  top: 70px;
+  box-shadow: 0px 0px 10px black;
+  border-radius: 10px;
+  width: 50%;
+  background-color: white;
+}
+.popup-wrapper{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 30px;
+}
+.popup-map{
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+  width: 90%;
+}
+.popup-time{
+  font-size: 25px;
+  padding: 10px 40px;
+}
+.popup-input{
+  border: none;
+  outline: none;
+  width: 50%;
+  text-align: center;
+  font-size: 20px;
+  cursor:progress;
+}
+.closeBtn{
+  padding: 10px;
+  border: none;
+  font-size: 20px;
+  margin-top: 10px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btnClose{
+
+}
+.btn{
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: rgb(154, 202, 186);
+  margin-bottom: 5px;
+}
+.btn-disable{
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  /* background-color: rgba(177, 59, 59, 0.931);   */
+  margin-bottom: 5px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.heading{
+  text-align: center;
+}
+.clear-btn{
+  margin-right: 5px;
+}
+.edit-btn{
+  margin-right: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+/* toggle  */
+.toggle{
+  display: none;
+  font-size: 20px;
+}
+.toggleul{
+  display: none;
+}
+.closebtnpara{
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  right: 20px;
+  top: 10px;
+}
+.toggleLogo{
+  position: relative;
+  top: 30px;
+  left: 20px;
+}
+
+
+.toggleul li .a:hover{
+  color: rgba(190, 91, 91, 0.93);
+  /* color: aqua; */
+}
+
+/* media   */
+@media screen and (max-width: 1024px) {
+  .a{
+    font-size: 1rem;
+    padding: 6px;
   }
-  to {
-    transform: rotate(360deg);
+  .layout-header nav ul{
+    width: 60%;
+  }
+
+}
+@media screen and (max-width: 900px) {
+  .a{
+    font-size: 1rem;
+  }
+  .layout-header nav ul{
+    width: 60%;
+  }
+
+  .popup-map{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* width: 60%; */
+  }
+}
+@media screen and (max-width: 730px) {
+  body {
+    /* background-color: lightgreen; */
+    /* background-color: rgba(137, 227, 197, 0.787); */
+  }
+  .toggle{
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .toggleul{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0px;
+    top: -0px;
+    /* height: 100vh;
+    width: 60%; */
+    height: 55vh;
+    width: 100%;
+    border-radius: 0px 0px 30px 30px;
+    background-color: black;
+    color: white;
+  }
+  .toggleul li .a{
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    top: 60px;
+    font-weight: bold;
+  }
+  .layout-header nav ul{
+    display: none;
   }
 }
